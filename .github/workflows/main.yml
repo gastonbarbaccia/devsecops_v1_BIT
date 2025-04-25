@@ -43,8 +43,8 @@ jobs:
     needs: codeql_analysis
     runs-on: ubuntu-latest
     env:
-      DEFECTDOJO_URL: "https://fa69-2800-810-5e4-99ae-acde-6a3a-8020-b18c.ngrok-free.app"
-      DEFECTDOJO_TOKEN: "326e9d99968c8e2273557b7fd655c5c15a3ee91a"
+      DEFECTDOJO_URL: "http://54.166.155.215:8080"
+      DEFECTDOJO_TOKEN: "a7980c25549af7bb5b9b67a076a7b23c296039db"
       DEFECTDOJO_ENGAGEMENT_PERIOD: 28
       DEFECTDOJO_ENGAGEMENT_STATUS: "Not Started"
       DEFECTDOJO_ENGAGEMENT_BUILD_SERVER: "null"
@@ -74,7 +74,7 @@ jobs:
       - name: Create engagement in DefectDojo
         run: |
           ENGAGEMENTID=$(curl --fail --location --request POST "${DEFECTDOJO_URL}/api/v2/engagements/" \
-          --header "Authorization: Token 326e9d99968c8e2273557b7fd655c5c15a3ee91a" \
+          --header "Authorization: Token a7980c25549af7bb5b9b67a076a7b23c296039db" \
           --header "Content-Type: application/json" \
           --data-raw '{
             "tags": ["GitHub Actions"],
@@ -117,8 +117,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: codeql_create_engagement
     env:
-      DEFECTDOJO_URL: "https://fa69-2800-810-5e4-99ae-acde-6a3a-8020-b18c.ngrok-free.app"
-      DEFECTDOJO_TOKEN: "326e9d99968c8e2273557b7fd655c5c15a3ee91a"
+      DEFECTDOJO_URL: "http://54.166.155.215:8080"
+      DEFECTDOJO_TOKEN: "a7980c25549af7bb5b9b67a076a7b23c296039db"
       DEFECTDOJO_SCAN_MINIMUM_SEVERITY: "Info"
       DEFECTDOJO_SCAN_ACTIVE: "true"
       DEFECTDOJO_SCAN_VERIFIED: "false"
@@ -127,7 +127,7 @@ jobs:
       DEFECTDOJO_SCAN_ENVIRONMENT: "Default"
       DEFECTDOJO_SCAN_TEST_TYPE: "SARIF"
       DEFECTDOJO_PRODUCT_TYPE: "Github Actions"
-      DEFECTDOJO_PRODUCT_NAME: "Prueba Boreal"
+      DEFECTDOJO_PRODUCT_NAME: "Codigo_Prueba"
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -200,8 +200,8 @@ jobs:
     needs: trivy_scan
     runs-on: ubuntu-latest
     env:
-      DEFECTDOJO_URL: "https://fa69-2800-810-5e4-99ae-acde-6a3a-8020-b18c.ngrok-free.app"
-      DEFECTDOJO_TOKEN: "326e9d99968c8e2273557b7fd655c5c15a3ee91a"
+      DEFECTDOJO_URL: "http://54.166.155.215:8080"
+      DEFECTDOJO_TOKEN: "a7980c25549af7bb5b9b67a076a7b23c296039db"
       DEFECTDOJO_ENGAGEMENT_PERIOD: 28
       DEFECTDOJO_ENGAGEMENT_STATUS: "Not Started"
       DEFECTDOJO_ENGAGEMENT_BUILD_SERVER: "null"
@@ -231,7 +231,7 @@ jobs:
       - name: Create engagement in DefectDojo
         run: |
           ENGAGEMENTID=$(curl --fail --location --request POST "${DEFECTDOJO_URL}/api/v2/engagements/" \
-          --header "Authorization: Token 326e9d99968c8e2273557b7fd655c5c15a3ee91a" \
+          --header "Authorization: Token a7980c25549af7bb5b9b67a076a7b23c296039db" \
           --header "Content-Type: application/json" \
           --data-raw '{
             "tags": ["GitHub Actions"],
@@ -273,8 +273,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: trivy_create_engagement
     env:
-      DEFECTDOJO_URL: "https://fa69-2800-810-5e4-99ae-acde-6a3a-8020-b18c.ngrok-free.app"
-      DEFECTDOJO_TOKEN: "326e9d99968c8e2273557b7fd655c5c15a3ee91a"
+      DEFECTDOJO_URL: "http://54.166.155.215:8080"
+      DEFECTDOJO_TOKEN: "a7980c25549af7bb5b9b67a076a7b23c296039db"
       DEFECTDOJO_SCAN_MINIMUM_SEVERITY: "Info"
       DEFECTDOJO_SCAN_ACTIVE: "true"
       DEFECTDOJO_SCAN_VERIFIED: "false"
@@ -283,7 +283,7 @@ jobs:
       DEFECTDOJO_SCAN_ENVIRONMENT: "Default"
       DEFECTDOJO_SCAN_TEST_TYPE: "SARIF"
       DEFECTDOJO_PRODUCT_TYPE: "Github Actions"
-      DEFECTDOJO_PRODUCT_NAME: "Prueba Boreal"
+      DEFECTDOJO_PRODUCT_NAME: "Codigo_Prueba"
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
