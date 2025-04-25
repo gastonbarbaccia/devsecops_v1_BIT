@@ -163,7 +163,7 @@ jobs:
 
   trivy_scan:
       name: Trivy Scan
-      runs-on: ubuntu
+      runs-on: ubuntu-latest
       permissions:
         security-events: write  # Add this line to ensure proper permissions
 
