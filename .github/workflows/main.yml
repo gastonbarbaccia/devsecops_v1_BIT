@@ -44,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DEFECTDOJO_URL: "http://54.166.155.215:8080"
-      DEFECTDOJO_TOKEN: "9b239c4b442d69081ecfe50a1a6d6c625d5566e2"
+      DEFECTDOJO_TOKEN: "063006d7913751d0d68518c0ac530c3943050b7c"
       DEFECTDOJO_ENGAGEMENT_PERIOD: 28
       DEFECTDOJO_ENGAGEMENT_STATUS: "Not Started"
       DEFECTDOJO_ENGAGEMENT_BUILD_SERVER: "null"
@@ -74,7 +74,7 @@ jobs:
       - name: Create engagement in DefectDojo
         run: |
           ENGAGEMENTID=$(curl --fail --location --request POST "${DEFECTDOJO_URL}/api/v2/engagements/" \
-          --header "Authorization: Token 9b239c4b442d69081ecfe50a1a6d6c625d5566e2" \
+          --header "Authorization: Token 063006d7913751d0d68518c0ac530c3943050b7c" \
           --header "Content-Type: application/json" \
           --data-raw '{
             "tags": ["GitHub Actions"],
@@ -118,7 +118,7 @@ jobs:
     needs: codeql_create_engagement
     env:
       DEFECTDOJO_URL: "http://54.166.155.215:8080"
-      DEFECTDOJO_TOKEN: "9b239c4b442d69081ecfe50a1a6d6c625d5566e2"
+      DEFECTDOJO_TOKEN: "063006d7913751d0d68518c0ac530c3943050b7c"
       DEFECTDOJO_SCAN_MINIMUM_SEVERITY: "Info"
       DEFECTDOJO_SCAN_ACTIVE: "true"
       DEFECTDOJO_SCAN_VERIFIED: "false"
@@ -201,7 +201,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DEFECTDOJO_URL: "http://54.166.155.215:8080"
-      DEFECTDOJO_TOKEN: "9b239c4b442d69081ecfe50a1a6d6c625d5566e2"
+      DEFECTDOJO_TOKEN: "063006d7913751d0d68518c0ac530c3943050b7c"
       DEFECTDOJO_ENGAGEMENT_PERIOD: 28
       DEFECTDOJO_ENGAGEMENT_STATUS: "Not Started"
       DEFECTDOJO_ENGAGEMENT_BUILD_SERVER: "null"
@@ -231,7 +231,7 @@ jobs:
       - name: Create engagement in DefectDojo
         run: |
           ENGAGEMENTID=$(curl --fail --location --request POST "${DEFECTDOJO_URL}/api/v2/engagements/" \
-          --header "Authorization: Token 9b239c4b442d69081ecfe50a1a6d6c625d5566e2" \
+          --header "Authorization: Token 063006d7913751d0d68518c0ac530c3943050b7c" \
           --header "Content-Type: application/json" \
           --data-raw '{
             "tags": ["GitHub Actions"],
@@ -274,7 +274,7 @@ jobs:
     needs: trivy_create_engagement
     env:
       DEFECTDOJO_URL: "http://54.166.155.215:8080"
-      DEFECTDOJO_TOKEN: "9b239c4b442d69081ecfe50a1a6d6c625d5566e2"
+      DEFECTDOJO_TOKEN: "063006d7913751d0d68518c0ac530c3943050b7c"
       DEFECTDOJO_SCAN_MINIMUM_SEVERITY: "Info"
       DEFECTDOJO_SCAN_ACTIVE: "true"
       DEFECTDOJO_SCAN_VERIFIED: "false"
