@@ -12,3 +12,4 @@ RUN chmod +x hola_mundo.sh
 
 # Ejecutar el script cuando el contenedor se inicie
 CMD ["./hola_mundo.sh"]
+
