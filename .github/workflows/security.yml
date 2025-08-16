@@ -11,7 +11,7 @@ on:
 jobs:
   codeql_analysis:
     name: Analyze Code with CodeQL
-    runs-on: [self-hosted, defectdojo]
+    runs-on: ubuntu-latest
 
     permissions:
       security-events: write
@@ -41,7 +41,7 @@ jobs:
   codeql_create_engagement:
     name: Create engagement in DefectDojo - CodeQL
     needs: codeql_analysis
-    runs-on: [self-hosted, defectdojo]
+    runs-on: ubuntu-latest
     env:
       DEFECTDOJO_URL: "http://35.173.243.96:8080"
       DEFECTDOJO_TOKEN: "02dbd8bb2ab3071f94eacddd68d5d889b4edcda5"
@@ -130,7 +130,7 @@ jobs:
 
   codeql_import_results:
     name: Publish CodeQL Scan in DefectDojo
-    runs-on: [self-hosted, defectdojo]
+    runs-on: ubuntu-latest
     needs: codeql_create_engagement
     env:
       DEFECTDOJO_URL: "http://35.173.243.96:8080"
